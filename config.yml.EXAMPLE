@@ -1,0 +1,7 @@
+github_ip: 65.74.177.129
+repos:
+  my_repo:
+    branch: master
+    env: production
+    path: '/home/joe/apps/MyApp'
+    restart_command: 'touch tmp/restart.txt'
