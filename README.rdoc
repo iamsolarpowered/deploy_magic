@@ -6,19 +6,19 @@ Recieves POST request from Github, then pulls changes, migrates the DB and resta
 
 If you're using Passenger:
 
-# Clone the application:
+1. Clone the application:
 
   git clone git://github.com/iamsolarpowered/deploy_magic
 
-# Copy the example configuration file to config.yml:
+2. Copy the example configuration file to config.yml:
 
   cp config.yml.EXAMPLE config.yml
 
-# Edit config.yml as needed.
+3. Edit config.yml as needed.
 
-# Configure Apache
+4. Configure Apache
 
-# Setup Post-Recieve URL (see "http://github.com/guides/post-receive-hooks":http://github.com/guides/post-receive-hooks)
+5. Setup Post-Recieve URL (see "http://github.com/guides/post-receive-hooks":http://github.com/guides/post-receive-hooks)
 
 That's it. Now, when you push to the Github repo, the changes will be pulled to the server any new migrations will be run, and the app will be restarted. Instant, painless deployment.
 
