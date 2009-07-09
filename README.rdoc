@@ -9,8 +9,8 @@ If you're using Passenger:
 1. Clone the application: <code>git clone git://github.com/iamsolarpowered/deploy_magic</code>
 2. Copy the example configuration file to config.yml: <code>cp config.yml.EXAMPLE config.yml</code>
 3. Edit config.yml as needed
-4. Configure Apache
-5. Setup Post-Recieve URL (see http://github.com/guides/post-receive-hooks)
+4. Configure Apache, pointing to /path/to/app/<i>public</i>
+5. Setup Post-Recieve URL to hit http://urlofapp.com/name_of_repo (see http://github.com/guides/post-receive-hooks)
 
 That's it. Now, when you push to the Github repo, the changes will be pulled to the server any new migrations will be run, and the app will be restarted. Instant, painless deployment.
 
