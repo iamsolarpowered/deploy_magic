@@ -8,11 +8,9 @@ post '/:repo_name' do
 
   repo_name = params[:repo_name]
   if repo = CONFIG['repos'][repo_name]
-    ok = true
-    ok = false unless system("#{repo['path']}/git pull #{repo['remote']} #{repo['branch']}")
-    ok = false unless system("#{repo['path']}/rake db:migrate RAILS_ENV=#{repo['env']}")
-    ok = false unless system("#{repo['path']}/repo['restart_command']")
-    (ok ? '<h1>Deployed :)</h1>' : '<h1>Something went wrong :(')
+    pulled = system("cd #{repo['path']} && git pull #{repo['remote']} #{repo['branch']}")
+    migrated = system("cd #{repo['path']} && rake db:migrate RAILS_ENV=#{repo['env']}")
+    restarted = system("cd #{repo['path']} && repo['restart_command']")
   else
     throw :halt, [404, "<h1>Repo not found: #{repo_name}</h1>"]
   end
