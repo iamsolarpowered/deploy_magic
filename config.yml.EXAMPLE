@@ -1,7 +1,14 @@
 github_ip: 65.74.177.129
 repos:
   my_repo:
+    remote: origin
     branch: master
-    env: production
+    env: development
     path: '/home/joe/apps/MyApp'
     restart_command: 'touch tmp/restart.txt'
+  my_other_repo:
+    remote: github
+    branch: production
+    env: production
+    path: '/home/joe/apps/MyOtherApp'
+    restart_command: 'mongrel_rails cluster::restart'

@@ -9,7 +9,7 @@ post '/:repo_name' do
   repo_name = params[:repo_name]
   if repo = CONFIG['repos'][repo_name]
     cmd = ["cd #{repo['path']}"]
-    cmd << "git pull origin #{repo['branch']}"
+    cmd << "git pull #{repo['remote']} #{repo['branch']}"
     cmd << "rake db:migrate RAILS_ENV=#{repo['env']}"
     cmd << repo['restart_command']
     system(cmd.join(' && '))
