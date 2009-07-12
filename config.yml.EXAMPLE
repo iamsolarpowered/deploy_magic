@@ -1,4 +1,5 @@
-github_ip: 65.74.177.129
+username: admin
+password: secret
 repos:
   my_repo:
     remote: origin

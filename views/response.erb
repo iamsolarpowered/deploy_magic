@@ -1,0 +1,19 @@
+<h1>Finished!</h1>
+
+<% if @pulled -%>
+  <p>Pulled from <%= "#{@repo['remote']}/#{@repo['branch']}" %></p>
+<% else -%>
+  <p class="error">Could not pull from <%= "#{@repo['remote']}/#{@repo['branch']}" %></p>
+<% end -%>
+
+<% if @migrated -%>
+  <p>Migrated database in <%= @repo['env'] %> environment</p>
+<% else -%>
+  <p class="error">Could not migrate database in <%= @repo['env'] %> environment</p>
+<% end -%>
+
+<% if @restarted -%>
+  <p>Restarted application</p>
+<% else -%>
+  <p class="error">Could not restart application</p>
+<% end -%>
